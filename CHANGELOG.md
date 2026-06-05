@@ -7,3 +7,7 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ## [0.1.0] - 2026-06-05
 
 - Align VS Code theme palette and syntax highlighting with lig.nvim.
+
+## [0.1.1] - 2026-06-05
+
+- Bump version to resolve publish collision.
