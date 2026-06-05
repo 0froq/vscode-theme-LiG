@@ -13,24 +13,18 @@ function toArray<T>(arr: T | T[]): T[] {
 }
 
 function getColors(style: 'light' | 'dark'): typeof colors {
-  if (style === 'dark') {
-    /* The array of light to dark colors are reversed to auto-generate dark theme */
-    const darkColors: any = {}
+  if (style === 'light') {
+    const lightColors: any = {}
     Object.entries(colors).forEach(([name, val]) => {
-      if (name === 'black')
-        darkColors.white = val
-
-      else if (name === 'white')
-        darkColors.black = val
-
+      if (Array.isArray(val))
+        lightColors[name] = [...toArray(val)].reverse()
       else
-        darkColors[name] = [...toArray(val)].reverse()
+        lightColors[name] = val
     })
-    return darkColors
+    return lightColors
   }
-  else {
-    return colors
-  }
+
+  return colors
 }
 
 function capitalize(str: string) {

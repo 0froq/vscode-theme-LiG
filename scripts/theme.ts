@@ -1,9 +1,5 @@
 import type { GetThemeOptions } from './helper'
-import { read } from 'node:fs'
-import { stringify } from 'node:querystring'
-import { deprecate } from 'node:util'
 import { toArray } from '@antfu/utils'
-import { LiGThemes } from './colors'
 import { createThemeHelpers } from './helper'
 
 export default function getTheme(options: GetThemeOptions) {
@@ -67,7 +63,7 @@ export default function getTheme(options: GetThemeOptions) {
       'activityBar.activeBorder': c('accent1'),
       'activityBar.border': c('borderMuted'),
 
-      'sideBar.foreground': c('fg'),
+      'sideBar.foreground': c('fgSidebar'),
       'sideBar.background': c('bgFloat'),
       'sideBar.border': c('borderMuted'),
       'sideBarTitle.foreground': c('fgStrong'),
@@ -171,22 +167,22 @@ export default function getTheme(options: GetThemeOptions) {
 
       'terminal.foreground': c('fg'),
       'terminal.selectionBackground': c('bgSelection'),
-      'terminal.ansiBrightBlack': c('bgAlt'),
-      'terminal.ansiBrightBlue': colors.azure[0],
-      'terminal.ansiBrightCyan': colors.cyan[0],
-      'terminal.ansiBrightGreen': colors.emerald[0],
-      'terminal.ansiBrightMagenta': colors.plum[0],
-      'terminal.ansiBrightRed': colors.rose[0],
-      'terminal.ansiBrightWhite': c('fgStrong'),
-      'terminal.ansiBrightYellow': colors.amber[0],
       'terminal.ansiBlack': c('bg'),
-      'terminal.ansiBlue': colors.azure[1],
+      'terminal.ansiBrightBlack': c('bgStatusLine'),
+      'terminal.ansiRed': colors.red[1],
+      'terminal.ansiBrightRed': colors.red[2],
+      'terminal.ansiGreen': colors.green[1],
+      'terminal.ansiBrightGreen': colors.green[2],
+      'terminal.ansiYellow': colors.yellow[1],
+      'terminal.ansiBrightYellow': colors.yellow[2],
+      'terminal.ansiBlue': colors.blue[1],
+      'terminal.ansiBrightBlue': colors.blue[2],
+      'terminal.ansiMagenta': colors.magenta[1],
+      'terminal.ansiBrightMagenta': colors.magenta[2],
       'terminal.ansiCyan': colors.cyan[1],
-      'terminal.ansiGreen': colors.emerald[1],
-      'terminal.ansiMagenta': colors.plum[1],
-      'terminal.ansiRed': colors.rose[1],
-      'terminal.ansiWhite': c('fgStrong'),
-      'terminal.ansiYellow': colors.amber[1],
+      'terminal.ansiBrightCyan': colors.cyan[2],
+      'terminal.ansiWhite': c('fg'),
+      'terminal.ansiBrightWhite': c('fgStrong'),
 
       'gitDecoration.addedResourceForeground': c('gitAdd'),
       'gitDecoration.modifiedResourceForeground': c('gitChange'),
@@ -203,13 +199,13 @@ export default function getTheme(options: GetThemeOptions) {
       'editorGutter.deletedBackground': c('gitDelete'),
       'editorGutter.deletedSecondaryBackground': c('gitDelete', '60'),
 
-      'editorBracketHighlight.foreground1': colors.coral[1],
+      'editorBracketHighlight.foreground1': colors.orange[1],
       'editorBracketHighlight.foreground2': colors.cyan[1],
-      'editorBracketHighlight.foreground3': colors.amber[1],
-      'editorBracketHighlight.foreground4': colors.moss[1],
-      'editorBracketHighlight.foreground5': colors.rose[1],
-      'editorBracketHighlight.foreground6': colors.iris[1],
-      'editorBracketHighlight.foreground7': colors.plum[1],
+      'editorBracketHighlight.foreground3': colors.red[1],
+      'editorBracketHighlight.foreground4': colors.blue[1],
+      'editorBracketHighlight.foreground5': colors.yellow[1],
+      'editorBracketHighlight.foreground6': colors.green[1],
+      'editorBracketHighlight.foreground7': colors.magenta[1],
 
       'debugToolBar.background': c('bg'),
       'editor.stackFrameHighlightBackground': c('bg'),
@@ -255,13 +251,14 @@ export default function getTheme(options: GetThemeOptions) {
       'typeParameter': c('refFd'),
       'type': c('refFd'),
 
-      'parameter': c('monoHl'),
-      'variable': c('monoHl'),
+      'parameter': c('mono'),
+      'variable': c('mono'),
       'property': c('mono'),
       'enumMember': c('ref'),
+      'label': c('ref'),
 
       'decorator': c('struct'),
-      'event': c('actionHl'),
+      'event': c('action'),
 
       'function': c('action'),
       'method': c('action'),
@@ -276,12 +273,12 @@ export default function getTheme(options: GetThemeOptions) {
       'boolean': c('ref'),
 
       'magicFunction': c('action'),
-      'magicFunction.declaration': c('mono'),
+      'magicFunction.declaration': c('actionHl'),
 
       'selfParameter': c('refHl'),
-      'selfParameter.declaration': c('refHl'),
+      'selfParameter.declaration': c('struct'),
       'clsParameter': c('refHl'),
-      'clsParameter.declaration': c('refHl'),
+      'clsParameter.declaration': c('struct'),
 
       'namespace.declaration': c('structHl'),
       'namespace.definition': c('structHl'),
@@ -303,6 +300,8 @@ export default function getTheme(options: GetThemeOptions) {
       'property.definition': c('struct'),
       'enumMember.declaration': c('refHl'),
       'enumMember.definition': c('refHl'),
+      'event.declaration': c('actionHl'),
+      'event.definition': c('actionHl'),
       'method.declaration': c('actionHl'),
       'method.definition': c('actionHl'),
       'function.declaration': c('actionHl'),
@@ -350,8 +349,15 @@ export default function getTheme(options: GetThemeOptions) {
       {
         scope: [
           'entity.name.tag',
-          'variable.parameter',
-          'punctuation.definition.decorator',
+          'entity.other.attribute-name.directive',
+          'meta.directive',
+          'keyword.control.import',
+          'keyword.control.export',
+          'storage.type',
+          'storage.modifier',
+          'storage.type.class',
+          'storage.type.interface',
+          'storage.type.type',
         ],
         settings: {
           foreground: c('struct'),
@@ -360,10 +366,13 @@ export default function getTheme(options: GetThemeOptions) {
       {
         scope: [
           'entity.name.function',
+          'support.function',
           'keyword.control.flow',
+          'keyword.control.return',
+          'keyword.control.throw',
+          'keyword.control.trycatch',
           'storage.modifier.async',
           'storage.type.function.async',
-
           'punctuation.attribute-shorthand.bind',
         ],
         settings: {
@@ -373,6 +382,7 @@ export default function getTheme(options: GetThemeOptions) {
       {
         scope: [
           'support.function.builtin',
+          'entity.name.function.decorator',
         ],
         settings: {
           foreground: c('actionHl'),
@@ -382,9 +392,9 @@ export default function getTheme(options: GetThemeOptions) {
         scope: [
           'constant.numeric',
           'constant.language.boolean',
-
+          'constant.language',
+          'entity.name.constant',
           'support.class.component',
-
         ],
         settings: {
           foreground: c('ref'),
@@ -392,15 +402,12 @@ export default function getTheme(options: GetThemeOptions) {
       },
       {
         scope: [
-          'constant.language',
           'constant.character.escape',
-          'support.type.builtin',
           'string.regexp',
-
+          'variable.language',
+          'variable.parameter.function.language.special',
           'entity.name.type.interface',
           'entity.name.type.alias',
-
-          'variable.parameter.function.language.special',
         ],
         settings: {
           foreground: c('refHl'),
@@ -410,6 +417,8 @@ export default function getTheme(options: GetThemeOptions) {
         scope: [
           'support.type.primitive',
           'support.type',
+          'entity.name.type',
+          'entity.name.class',
         ],
         settings: {
           foreground: c('refFd'),
@@ -417,7 +426,30 @@ export default function getTheme(options: GetThemeOptions) {
       },
       {
         scope: [
+          'variable.parameter',
+          'punctuation.definition.decorator',
+        ],
+        settings: {
+          foreground: c('struct'),
+        },
+      },
+      {
+        scope: [
+          'variable.other.readwrite',
+          'variable.other.object',
+          'variable.other.constant',
           'constant.character',
+        ],
+        settings: {
+          foreground: c('mono'),
+        },
+      },
+      {
+        scope: [
+          'meta.object-literal.key',
+          'meta.property-name',
+          'variable.other.property',
+          'support.variable.property',
           'entity.other.attribute-name',
         ],
         settings: {
@@ -426,10 +458,12 @@ export default function getTheme(options: GetThemeOptions) {
       },
       {
         scope: [
-          'variable.other.readwrite',
+          'keyword',
+          'keyword.operator.expression',
+          'keyword.operator.new',
         ],
         settings: {
-          foreground: c('monoHl'),
+          foreground: c('mono'),
         },
       },
       {
@@ -438,9 +472,44 @@ export default function getTheme(options: GetThemeOptions) {
           'comment',
           'keyword.operator',
           'punctuation',
+          'meta.brace',
+          'delimiter',
         ],
         settings: {
           foreground: c('monoFd'),
+        },
+      },
+      {
+        scope: [
+          'markup.heading',
+          'markup.heading entity.name',
+        ],
+        settings: {
+          foreground: c('fgStrong'),
+          fontStyle: 'bold',
+        },
+      },
+      {
+        scope: 'markup.quote',
+        settings: {
+          foreground: c('mono'),
+          fontStyle: 'italic',
+        },
+      },
+      {
+        scope: [
+          'markup.underline.link',
+          'string.other.link',
+        ],
+        settings: {
+          foreground: c('mono'),
+          fontStyle: 'underline',
+        },
+      },
+      {
+        scope: 'markup.raw',
+        settings: {
+          foreground: c('mono'),
         },
       },
     //   {
