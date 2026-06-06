@@ -6,8 +6,9 @@
 > Less is Great.
 
 <p align="center">
-<img src="assets/lig_dark.png" alt="LiG Theme Preview" width="600"/>
-<img src="assets/lig_light.png" alt="LiG Theme Preview" width="600"/>
+<img src="assets/lig-dark.png" alt="LiG Theme Preview" width="600"/>
+<img src="assets/lig-light.png" alt="LiG Theme Preview" width="600"/>
+<br />
 <a href="https://marketplace.visualstudio.com/items?itemName=froQ.theme-lig" target="__blank">VS Code Marketplace</a>
 </p>
 
