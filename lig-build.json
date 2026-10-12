@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "designVersion": "0.2.14",
+  "compilerVersion": "0.6.0",
+  "inputHash": "13dcf14fe72c5a8dba29fef1597a7b93bbe7f069dd848c82d75161a963ed6b78",
+  "sourceRepository": "https://github.com/0froq/lig",
+  "sourceRef": "editor-ports-2026-10-12",
+  "variants": [
+    "light",
+    "dark",
+    "light-paper",
+    "dark-paper"
+  ],
+  "colorPolicy": "srgb-constant-lh-chroma-reduce",
+  "port": "vscode",
+  "packageVersion": "0.2.0",
+  "distributionRepository": "https://github.com/0froq/vscode-theme-LiG",
+  "files": {
+    "package.json": "d403926264e4b92d66ac2d24b07841be5d6b6a9d8819a65e3aa690dd4ef3df36",
+    "themes/lig-light.json": "ce0aab0b67bcbb8b75647047b9f6e45eb44bfab54968188a4496b0a5196d2d5a",
+    "themes/lig-dark.json": "8dcbe6399cb23647e264aa7f8146ab24ae3ce9c069892679303b25e1b29f217b",
+    "themes/lig-light-paper.json": "b091a0cf89a11c33ffd17bb6b9f5173c321e438c4d85d864b078ecf90026cfe5",
+    "themes/lig-dark-paper.json": "19c721865393212f11cc51eab4b57a3d37805e8419dcf20c1cb5534d5f0a1f69",
+    "LICENSE.md": "81b60d62a5e07d39c8205ddc1661a6e3e3b82b0365c10f7798110084bd6c6d1f",
+    "README.md": "711dc732a442786d695a7737139c3a6611cb6e3f18a726c2c4240395fd197d2e",
+    ".vscodeignore": "b952ae8bb6c6126421d52d4d2ee31c47e62145dfddd1b87889a09806d82df36b",
+    ".github/workflows/release.yml": "2bec00cab8aed00055b4c9ee9c3a3cfdc8e80d4794e5b029c68f81112ecaa8b2",
+    "scripts/verify.py": "0858ba5959643d18420be00c7a58622a2aec27634b29dd8b439d1e870d959c1b",
+    "scripts/sync.py": "b980eb4539e8e73f1ec821bf631e6caea25997bad8e71504470a8c0f0490af28",
+    ".github/workflows/verify.yml": "2c5a2f001d5356985e6cd6390d17b5ba8f93e17beda7659c237b92c178d5a681"
+  },
+  "coverage": {
+    "syntax": [
+      "TextMate",
+      "semantic tokens"
+    ],
+    "runtime": "declarative JSON"
+  }
+}

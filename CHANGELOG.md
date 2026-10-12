@@ -1,3 +1,9 @@
+## 0.2.0
+
+- Generate the official extension from the canonical LiG compiler; preserve `froQ.theme-lig`.
+- Replace Soft with Light Paper / Dark Paper and align all four syntax/UI/terminal palettes.
+- Add checksum verification and a verified import workflow; package releases without rebuilding a separate palette.
+
 # Change Log
 
 All notable changes to the "lig-theme" extension will be documented in this file.
