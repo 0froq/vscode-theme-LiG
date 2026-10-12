@@ -2,9 +2,10 @@
   "name": "theme-lig",
   "displayName": "LiG Theme for Code",
   "publisher": "froQ",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "LiG: a quiet theme with four variants from one palette",
   "license": "MIT",
+  "icon": "icon.png",
   "engines": {
     "vscode": "^1.107.0"
   },
