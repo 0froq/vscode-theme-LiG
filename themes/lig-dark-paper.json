@@ -56,10 +56,10 @@
       "foreground": "#95a4f6"
     },
     "comment": {
-      "foreground": "#7c7a75"
+      "foreground": "#706f69"
     },
     "string": {
-      "foreground": "#7c7a75"
+      "foreground": "#706f69"
     },
     "keyword": {
       "foreground": "#b9b7b2"
@@ -569,7 +569,7 @@
         "constant.character"
       ],
       "settings": {
-        "foreground": "#7c7a75"
+        "foreground": "#706f69"
       }
     },
     {
@@ -599,7 +599,7 @@
         "delimiter"
       ],
       "settings": {
-        "foreground": "#7c7a75"
+        "foreground": "#706f69"
       }
     },
     {
@@ -608,7 +608,7 @@
         "comment"
       ],
       "settings": {
-        "foreground": "#7c7a75"
+        "foreground": "#706f69"
       }
     },
     {
