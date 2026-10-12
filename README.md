@@ -4,14 +4,14 @@ Less is Great. Four variants from the canonical [LiG palette](https://github.com
 
 ## Install
 
-Download `theme-lig-0.2.0.vsix` from [GitHub Releases](https://github.com/0froq/vscode-theme-LiG/releases/tag/v0.2.0), then:
+Download `theme-lig-0.2.1.vsix` from [GitHub Releases](https://github.com/0froq/vscode-theme-LiG/releases/tag/v0.2.1), then:
 
 ```sh
-code --install-extension theme-lig-0.2.0.vsix
+code --install-extension theme-lig-0.2.1.vsix
 ```
 
 Or use **Extensions: Install from VSIX...** in VS Code, then **Preferences: Color Theme**.
-The extension keeps its original ID `froQ.theme-lig`. GitHub releases and editor stores have separate publishing schedules: the VSIX is the version described here. Minimum VS Code version: 1.107.0.
+The extension keeps its original ID `froQ.theme-lig`. Stable GitHub Releases trigger the Marketplace workflow after the one-time [OIDC setup](https://github.com/0froq/vscode-theme-LiG/blob/main/PUBLISHING.md); check the workflow result before assuming the store has updated. Minimum VS Code version: 1.107.0.
 
 ### Migrate from Soft or Preview
 
@@ -31,12 +31,12 @@ To roll back, install an older release VSIX and restore its theme name in settin
 
 ## Source and reproducibility
 
-This repository distributes static native JSON, with no executable extension code or installation-time token downloads. Change colors and bindings in [the LiG source snapshot](https://github.com/0froq/lig/tree/editor-ports-2026-10-12); run `pnpm ports:generate` there. Import the generated payload with `python3 scripts/sync.py /path/to/lig/dist/ports/vscode`, then `python3 scripts/verify.py` (Python 3.11+).
+This repository distributes static native JSON, with no executable extension code or installation-time token downloads. Change colors and bindings in [the LiG source snapshot](https://github.com/0froq/lig/tree/store-hooks-2026-10-12); run `pnpm ports:generate` there. Import the generated payload with `python3 scripts/sync.py /path/to/lig/dist/ports/vscode`, then `python3 scripts/verify.py` (Python 3.11+).
 
 Package a local VSIX with `npx @vscode/vsce package --no-dependencies`. No palette build is performed here. `lig-build.json` records every generated file checksum.
 
-Design: 0.2.14 · Compiler: 0.6.0
-Input SHA-256: `13dcf14fe72c5a8dba29fef1597a7b93bbe7f069dd848c82d75161a963ed6b78`
+Design: 0.2.14 · Compiler: 0.7.0
+Input SHA-256: `9705c4aa12561ea16d5f0aaf7f3fad839d12ec0412a4a82f32a6c50139f4b154`
 
 ## Scope and manual checks
 
