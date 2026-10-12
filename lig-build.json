@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "designVersion": "0.2.14",
-  "compilerVersion": "0.7.0",
-  "inputHash": "9705c4aa12561ea16d5f0aaf7f3fad839d12ec0412a4a82f32a6c50139f4b154",
+  "compilerVersion": "0.7.1",
+  "inputHash": "3cc4b6ec5ae05ca639eb92f3c811ac14ea8055e9c7b4b4f78bffe29ec89e16e3",
   "sourceRepository": "https://github.com/0froq/lig",
-  "sourceRef": "store-hooks-2026-10-12",
+  "sourceRef": "extension-distribution-2026-10-12",
   "variants": [
     "light",
     "dark",
@@ -13,23 +13,24 @@
   ],
   "colorPolicy": "srgb-constant-lh-chroma-reduce",
   "port": "vscode",
-  "packageVersion": "0.2.1",
+  "packageVersion": "0.2.2",
   "distributionRepository": "https://github.com/0froq/vscode-theme-LiG",
   "files": {
-    "package.json": "0989708b580123338928200e125c027f8aa7c68cce11ca7a05ed5e8a48ab70cc",
+    "package.json": "ff611de2822e8109d268772ad5ab6704f4b2e88e28370f6e1d9259dc254bb6b6",
+    "icon.png": "3594335981a783751a0a150f055fe516d5d0f681eab5f602bc9a70a758b1b4bf",
     "themes/lig-light.json": "ce0aab0b67bcbb8b75647047b9f6e45eb44bfab54968188a4496b0a5196d2d5a",
     "themes/lig-dark.json": "8dcbe6399cb23647e264aa7f8146ab24ae3ce9c069892679303b25e1b29f217b",
     "themes/lig-light-paper.json": "b091a0cf89a11c33ffd17bb6b9f5173c321e438c4d85d864b078ecf90026cfe5",
     "themes/lig-dark-paper.json": "19c721865393212f11cc51eab4b57a3d37805e8419dcf20c1cb5534d5f0a1f69",
     "LICENSE.md": "81b60d62a5e07d39c8205ddc1661a6e3e3b82b0365c10f7798110084bd6c6d1f",
-    "README.md": "11d1638003d5e2829db1d92df74184f4b10ef76cac5b7bba86a129217dab8a6d",
+    "README.md": "73459bcf94ea3545f0975857567c6a4bf4437fba0b90fb4f732ae5298f1a52a1",
     ".vscodeignore": "7b9a284fcbeaa9280f80ab8b3e7c4575d3662e32573fc3678205e6d181372694",
     "scripts/verify.py": "2923cfcab5d3e3f75a160b34ede87264fdddd8087a64fe4eff94de88248c0c86",
     "scripts/sync.py": "b980eb4539e8e73f1ec821bf631e6caea25997bad8e71504470a8c0f0490af28",
-    "scripts/release.py": "95f6ce1ad05f82b3be4b73a5eb8afd475aa9879e16765f7478b3cd25cd827cf8",
+    "scripts/release.py": "f42c018edf0c93dc0d6e3abc40ee2496c01a1daefed10363acebd2d8cbf2b42e",
     ".github/workflows/verify.yml": "2c5a2f001d5356985e6cd6390d17b5ba8f93e17beda7659c237b92c178d5a681",
-    ".github/workflows/release.yml": "ba8258795fa62d8cf790040ebaa09ec726daae692d5a920a6718a959bddb0da7",
-    "PUBLISHING.md": "920d61e37331d25774ee2cf7ba93312369a01cc8880ae4cded3e4cb91707f2e2"
+    ".github/workflows/release.yml": "2cb23e998525c1ce4f33c8105c2d753e7f2be9dd8ebcabb2de4d454b65b41041",
+    "PUBLISHING.md": "a271fc68986b497845fad9dec95139f5b9eadb1c9689db69b925ff566ad1a898"
   },
   "coverage": {
     "syntax": [
