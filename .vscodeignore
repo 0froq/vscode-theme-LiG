@@ -4,3 +4,4 @@ scripts/**
 assets/**
 .vscode/**
 lig-build.json
+PUBLISHING.md
