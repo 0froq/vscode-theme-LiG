@@ -1,0 +1,6 @@
+.git/**
+.github/**
+scripts/**
+assets/**
+.vscode/**
+lig-build.json

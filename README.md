@@ -1,42 +1,49 @@
-> [!warning]
-> This theme is currently under active and **rapid** development. Its **name, configurable options, color scheme, and final visual presentation** are all subject to change.
+# LiG Theme for VS Code
 
-<h1 align="center">LiG Theme for VS Code</h1>
+Less is Great. Four variants from the canonical [LiG palette](https://github.com/0froq/lig): **LiG Light**, **LiG Dark**, **LiG Light Paper**, **LiG Dark Paper**.
 
-> Less is Great.
+## Install
 
-<p align="center">
-<img src="assets/lig-dark.png" alt="LiG Theme Preview" width="600"/>
-<img src="assets/lig-light.png" alt="LiG Theme Preview" width="600"/>
-<br />
-<a href="https://marketplace.visualstudio.com/items?itemName=froQ.theme-lig" target="__blank">VS Code Marketplace</a>
-</p>
+Download `theme-lig-0.2.0.vsix` from [GitHub Releases](https://github.com/0froq/vscode-theme-LiG/releases/tag/v0.2.0), then:
 
-## Match with System
+```sh
+code --install-extension theme-lig-0.2.0.vsix
+```
 
-<!--eslint-skip-->
+Or use **Extensions: Install from VSIX...** in VS Code, then **Preferences: Color Theme**.
+The extension keeps its original ID `froQ.theme-lig`. GitHub releases and editor stores have separate publishing schedules: the VSIX is the version described here. Minimum VS Code version: 1.107.0.
 
-```jsonc
-// .vscode/setting.json
+### Migrate from Soft or Preview
+
+Version 0.2.0 replaces the old independently authored palettes. Select **LiG Light Paper** / **LiG Dark Paper** in place of Soft and update any `workbench.colorTheme` or preferred-theme settings. Soft is no longer contributed as a separate theme. The older `froQ.theme-lig-preview` extension is independent; disable or uninstall that extension to avoid selecting an old preview.
+
+Optional system appearance switching (merge into your existing settings):
+
+```json
 {
   "window.autoDetectColorScheme": true,
-  "workbench.preferredLightColorTheme": "LiG Light",
-  "workbench.preferredDarkColorTheme": "LiG Dark",
+  "workbench.preferredLightColorTheme": "LiG Light Paper",
+  "workbench.preferredDarkColorTheme": "LiG Dark Paper"
 }
 ```
 
-## Links
+To roll back, install an older release VSIX and restore its theme name in settings.
 
-- [Vitesse Theme](https://marketplace.visualstudio.com/items?itemName=antfu.theme-vitesse). Great theme, probably my favorite.
-- [@antfu](https://github.com/antfu), author of Vitesse Theme and many other great [projects](https://antfu.me/projects).
+## Source and reproducibility
 
-## Thanks
+This repository distributes static native JSON, with no executable extension code or installation-time token downloads. Change colors and bindings in [the LiG source snapshot](https://github.com/0froq/lig/tree/editor-ports-2026-10-12); run `pnpm ports:generate` there. Import the generated payload with `python3 scripts/sync.py /path/to/lig/dist/ports/vscode`, then `python3 scripts/verify.py` (Python 3.11+).
 
-This project is based on [Vitesse Theme](https://marketplace.visualstudio.com/items?itemName=antfu.theme-vitesse) by [Anthony Fu](https://github.com/antfu).
+Package a local VSIX with `npx @vscode/vsce package --no-dependencies`. No palette build is performed here. `lig-build.json` records every generated file checksum.
 
-## License
+Design: 0.2.14 · Compiler: 0.6.0
+Input SHA-256: `13dcf14fe72c5a8dba29fef1597a7b93bbe7f069dd848c82d75161a963ed6b78`
 
-MIT - Copyright (c) 2020 Primer <br>
-MIT - Copyright (c) 2021 Anthony Fu
-<br>
-MIT - Copyright (c) 2025 froQ
+## Scope and manual checks
+
+The adapter covers 191 Workbench keys, TextMate scopes, semantic tokens and the same 16 terminal slots as the other LiG ports. Language grammars and language servers may classify source differently. Semantic token availability depends on the language extension and user settings.
+
+Data and package checks do not establish visual acceptance. Check all four themes in VS Code: UI and panels, syntax with semantic highlighting on/off, strings/comments, diagnostics/selections and terminal ANSI colors. Existing user color customizations can override the theme.
+
+## Credits and license
+
+MIT. The original distribution was based on [Vitesse Theme](https://github.com/antfu/vscode-theme-vitesse) by Anthony Fu. Original Primer and Anthony Fu copyright notices are retained in LICENSE.md.
