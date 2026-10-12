@@ -35,12 +35,12 @@ To roll back, install an older release VSIX and restore its theme name in settin
 
 ## Source and reproducibility
 
-This repository distributes static native JSON, with no executable extension code or installation-time token downloads. Change colors and bindings in [the LiG source snapshot](https://github.com/0froq/lig/tree/extension-distribution-2026-10-12); run `pnpm ports:generate` there. Import the generated payload with `python3 scripts/sync.py /path/to/lig/dist/ports/vscode`, then `python3 scripts/verify.py` (Python 3.11+).
+This repository distributes static native JSON, with no executable extension code or installation-time token downloads. Change colors and bindings in [the LiG source snapshot](https://github.com/0froq/lig/tree/codex/mono-muted-parity); run `pnpm ports:generate` there. Import the generated payload with `python3 scripts/sync.py /path/to/lig/dist/ports/vscode`, then `python3 scripts/verify.py` (Python 3.11+).
 
 Package a local VSIX with `npx @vscode/vsce package --no-dependencies`. No palette build is performed here. `lig-build.json` records every generated file checksum.
 
-Design: 0.2.14 · Compiler: 0.7.1
-Input SHA-256: `3cc4b6ec5ae05ca639eb92f3c811ac14ea8055e9c7b4b4f78bffe29ec89e16e3`
+Design: 0.2.15 · Compiler: 0.7.2
+Input SHA-256: `172a396739022b63ba8d5df12210c24f4edd6bd3e6b1a9d737b59fc33ac23445`
 
 ## Scope and manual checks
 
